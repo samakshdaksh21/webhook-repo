@@ -3,12 +3,12 @@ from pymongo import MongoClient
 from datetime import datetime
 
 app = Flask(__name__)
-client = MongoClient("mongodb://localhost:27017/") 
+client = MongoClient("mongodb+srv://samakshdaksh21:Samaksh%4012@webhookcluster.ckrsogk.mongodb.net/") 
  # Update this mongodb://localhost:27017
 db = client["webhook_db"]
 collection = db["events"]
 
-@app.route('/webhook', methods=['POST'])
+@app.route('/webhook', methods=['POST'])    
 def webhook():
     data = request.json
     event = request.headers.get('X-GitHub-Event')
